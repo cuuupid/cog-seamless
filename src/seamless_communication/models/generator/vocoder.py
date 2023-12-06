@@ -107,6 +107,7 @@ class PretsselEncoderFrontend(Module):
         ).unsqueeze(1)
 
         if self.embed_lang is not None:
+            print("Available langs:", self.lang_to_index.keys())
             lang_index = self.lang_to_index[tgt_lang]
             lang_index_tensor = (
                 torch.Tensor([lang_index]).to(seqs).repeat(seqs.size(0), 1)
