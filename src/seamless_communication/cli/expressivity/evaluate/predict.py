@@ -214,10 +214,10 @@ class Predictor(BasePredictor):
             hyps += [str(s) for s in text_output]
 
             text = text_output[0]
+            print(text)
             torchaudio.save(
                 waveforms_dir / f"pred.wav",
                 speech_output.audio_wavs[0][0].to(torch.float32).cpu(),
                 sample_rate=speech_output.sample_rate,
             )
-            return ModelOutput(audio_out=waveforms_dir / f"pred.wav", text_out=text)
-
+            return ModelOutput(audio_out=waveforms_dir / f"pred.wav", text_out=str(text))
