@@ -147,3 +147,8 @@ seamless_communication
 !*/seamless_communication
 m4t_scripts
 /ggml/test_data/
+model/*
+*.mp3
+*.wav
+*.tsv
+tmp/*

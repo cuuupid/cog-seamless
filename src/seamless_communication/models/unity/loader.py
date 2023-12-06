@@ -463,6 +463,8 @@ class GcmvnStatsLoader:
             gcmvn_stats: Dict[str, List[float]] = card.field("gcmvn_stats").as_(dict)
         except AssetCardFieldNotFoundError:
             model_override = card.field("model_config").as_(dict)
+            print("Using model override:")
+            print(model_override)
             gcmvn_stats = model_override["gcmvn_stats"]
 
         return gcmvn_stats["mean"], gcmvn_stats["std"]
